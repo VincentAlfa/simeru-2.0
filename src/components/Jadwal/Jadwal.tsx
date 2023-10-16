@@ -7,11 +7,10 @@ import {
   SelectTrigger,
   SelectValue,
   SelectContent,
-  SelectLabel,
 } from '@/components/ui/select';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 import { dataProdi } from '@/Data/DataProdi';
 import { TableHeaderData } from '@/Data/TableHeader';
+import ScheduleTable from '../Table/Table';
 
 const Jadwal = () => {
   const [fakultas, setFakultas] = useState<string>('');
@@ -40,7 +39,7 @@ const Jadwal = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectLabel className='text-xs'>Fakultas</SelectLabel>
+                <SelectItem value='Pilih Fakultas' className='text-xs'>Pilih Fakultas</SelectItem>
                 {dataFakultas.map((data) => (
                   <SelectItem key={data.id} value={data.nama}>
                     {data.nama}
@@ -73,38 +72,11 @@ const Jadwal = () => {
           </Select>
         </div>
 
-        <Table className='mt-4'>
-          <TableHeader >
-            <TableRow className='bg-[#003366]'>
-              {TableHeaderData.header.map((data) => {
-                return (
-                  <TableHead className='text-white  w-[105px]' key={data}>
-                    {data}
-                  </TableHead>
-                );
-              })}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {dataProdi
-              .find((data) => data.prodi === prodi)
-              ?.detail.map((data) => {
-                return (
-                  <TableRow>
-                    <TableCell>{data.hari}</TableCell>
-                    <TableCell>{data.kode}</TableCell>
-                    <TableCell>{data.matkul}</TableCell>
-                    <TableCell>{data.kelas}</TableCell>
-                    <TableCell>{data.sks}</TableCell>
-                    <TableCell>{data.jam}</TableCell>
-                    <TableCell>{data.semester}</TableCell>
-                    <TableCell>{data.dosen}</TableCell>
-                    <TableCell>{data.ruang}</TableCell>
-                  </TableRow>
-                );
-              })}
-          </TableBody>
-        </Table>
+        <ScheduleTable 
+        prodi={prodi}
+        dataProdi={dataProdi}
+        TableHeaderData={TableHeaderData}
+        />
       </div>
     </div>
   );

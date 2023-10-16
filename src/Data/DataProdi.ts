@@ -10,7 +10,7 @@ interface Detail {
   ruang: string;
 }
 
-interface TableData {
+export interface TableData {
   prodi: string;
   detail: Detail[];
 }

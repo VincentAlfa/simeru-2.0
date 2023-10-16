@@ -18,7 +18,7 @@ const dataFakultas: dropdownData[] = [
   {
     id: 3,
     nama: 'Sastra',
-    prodi: ['Satra Indonesia', 'Sastra Inggris', 'Ilmu Komunikasi'],
+    prodi: ['Sastra Indonesia', 'Sastra Inggris', 'Ilmu Komunikasi'],
   },
 ];
 
