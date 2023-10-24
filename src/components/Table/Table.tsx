@@ -1,5 +1,12 @@
-import { TableData } from '@/Data/DataProdi';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
+import { TableData } from "@/Data/DataProdi";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../ui/table";
 
 interface tableProps {
   dataProdi: TableData[];
@@ -9,14 +16,18 @@ interface tableProps {
   };
 }
 
-const ScheduleTable: React.FC<tableProps> = ({ dataProdi, prodi, TableHeaderData }) => {
+const ScheduleTable: React.FC<tableProps> = ({
+  dataProdi,
+  prodi,
+  TableHeaderData,
+}) => {
   return (
-    <Table className='mt-4'>
+    <Table className="mt-4">
       <TableHeader>
-        <TableRow className='bg-[#003366]'>
+        <TableRow className="bg-[#003366]">
           {TableHeaderData.header.map((data) => {
             return (
-              <TableHead className='text-white  w-[105px]' key={data}>
+              <TableHead className="w-[105px]  text-white" key={data}>
                 {data}
               </TableHead>
             );

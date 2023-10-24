@@ -1,11 +1,11 @@
-import Aside from './components/Aside/Aside';
-import Container from './components/Container';
-import Jadwal from './components/Jadwal/Jadwal';
-import Navbar from './components/Navbar/Navbar';
+import Aside from "./components/Aside/Aside";
+import Container from "./components/Container";
+import Jadwal from "./components/Jadwal/Jadwal";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className='bg-[#f9f9f9] h-screen w-full'>
+    <div className="h-screen w-full bg-[#f9f9f9]">
       <Navbar />
       <Container>
         <Aside />
