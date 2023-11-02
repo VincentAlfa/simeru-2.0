@@ -22,38 +22,40 @@ const ScheduleTable: React.FC<tableProps> = ({
   TableHeaderData,
 }) => {
   return (
-    <Table className="mt-4">
-      <TableHeader>
-        <TableRow className="bg-[#003366]">
-          {TableHeaderData.header.map((data) => {
-            return (
-              <TableHead className="w-[105px]  text-white" key={data}>
-                {data}
-              </TableHead>
-            );
-          })}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {dataProdi
-          .find((data) => data.prodi === prodi)
-          ?.detail.map((data) => {
-            return (
-              <TableRow>
-                <TableCell>{data.hari}</TableCell>
-                <TableCell>{data.kode}</TableCell>
-                <TableCell>{data.matkul}</TableCell>
-                <TableCell>{data.kelas}</TableCell>
-                <TableCell>{data.sks}</TableCell>
-                <TableCell>{data.jam}</TableCell>
-                <TableCell>{data.semester}</TableCell>
-                <TableCell>{data.dosen}</TableCell>
-                <TableCell>{data.ruang}</TableCell>
-              </TableRow>
-            );
-          })}
-      </TableBody>
-    </Table>
+    <div className="">
+      <Table  className="mt-4 ">
+        <TableHeader >
+          <TableRow className="bg-[#003366]">
+            {TableHeaderData.header.map((data) => {
+              return (
+                <TableHead className="w-[105px]  text-white" key={data}>
+                  {data}
+                </TableHead>
+              );
+            })}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {dataProdi
+            .find((data) => data.prodi === prodi)
+            ?.detail.map((data) => {
+              return (
+                <TableRow>
+                  <TableCell>{data.hari}</TableCell>
+                  <TableCell>{data.kode}</TableCell>
+                  <TableCell>{data.matkul}</TableCell>
+                  <TableCell>{data.kelas}</TableCell>
+                  <TableCell>{data.sks}</TableCell>
+                  <TableCell>{data.jam}</TableCell>
+                  <TableCell>{data.semester}</TableCell>
+                  <TableCell>{data.dosen}</TableCell>
+                  <TableCell>{data.ruang}</TableCell>
+                </TableRow>
+              );
+            })}
+        </TableBody>
+      </Table>
+    </div>
   );
 };
 
